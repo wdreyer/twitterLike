@@ -30,15 +30,14 @@ router.delete("/delete/:id", (req, res) => {
   });
 });
 
-router.put("/likeTweet/:id", (req, res) => {
-  Tweet.updateOne({ _id: req.params.id }, { $inc: { nbLike: "1" } }).then(
-    () => {
-      Tweet.find({ _id: req.params.id }).then((data) => {
-        console.log(data);
-      });
-      res.json({ data: "data mise à jour" });
+router.put("/likeTweet/:id/:iduser", (req, res) => {
+  Tweet.findOne({ _id: req.params.id }).then((data) => {
+    if (data.nbLike.some((e) => e === iduser)) {
+      data.nbLike.filter((n) => n !== iduser);
+    } else {
+      data.nbLike.push(iduser);
     }
-  );
+  });
 });
 
 module.exports = router;
