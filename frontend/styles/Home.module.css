@@ -1,23 +1,57 @@
 .main {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  padding: 4rem 0;
+  justify-content: space-between;  
   color: white;
+  height: 100vh;
+}
+.leftSide{
+  margin-left: 3%;
+  margin-top: 2%;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25vh;
+
+}
+.centerSide {
+  border-right :1px solid #2D353E;
+  border-left : 1px solid #2D353E;
+  width: 136vh;
+}
+.logo {
+  background-image: url(../public/logoTw.png);
+  height: 50px;
+  width: 50px;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
-.title {
-  line-height: 1.15;
-  font-size: 4rem;
+.loginGroup {
+  display:flex;
+  flex-direction: column;
+  margin-bottom: 50px;
+
+}
+.subgroup {
+  display:flex;
+}
+.names {
+  margin-left: 10px;
+}
+.username {
+  color:lightgrey;
+}
+.logout{
+  margin-top :30px;
+  background-color: #0C1315;
+  color:white;
+  border-radius: 20px;
+  padding:5px;
+  width: 100px; 
+  border: 1px solid white ;
+  cursor: pointer;
+}
+.logout:hover{
+  background-color: black ;
 }
 
-.title a {
-  color: #0070f3;
-  text-decoration: none;
-}
-
-.title a:hover, .title a:focus, .title a:active {
-  text-decoration: underline;
-}
