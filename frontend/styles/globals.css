@@ -1,0 +1,16 @@
+@font-face {
+  font-family: "tweet";
+  src: url(../font/mont-regular.ttf);
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: #0C1315;
+  }
+
+* {
+  box-sizing: border-box;
+}
