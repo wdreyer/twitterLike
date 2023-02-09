@@ -15,7 +15,7 @@ router.post("/NewTweets", (req, res) => {
       username: req.body.username,
       content: req.body.content,
       Date: new Date(),
-      nbLike: 0,
+      nbLike: [],
       hashtags: ["#1", "#2"],
     });
     newTweet.save().then(() => res.json({ result: "Tweet enregistré" }));
@@ -32,11 +32,21 @@ router.delete("/delete/:id", (req, res) => {
 
 router.put("/likeTweet/:id/:iduser", (req, res) => {
   Tweet.findOne({ _id: req.params.id }).then((data) => {
-    if (data.nbLike.some((e) => e === iduser)) {
-      data.nbLike.filter((n) => n !== iduser);
+    if (data.nbLike.some((e) => e === req.params.iduser)) {
+      data.nbLike = data.nbLike.filter((n) => n !== req.params.iduser);
+      console.log("first if", data.nbLike);
     } else {
-      data.nbLike.push(iduser);
+      data.nbLike.push(req.params.iduser);
+
+      console.log(data.nbLike);
     }
+    Tweet.updateOne(
+      { _id: req.params.id },
+      { $set: { nbLike: data.nbLike } }
+    ).then(() => {
+      console.log(data.nbLike);
+    });
+    res.json({ result: data.nbLike });
   });
 });
 
