@@ -13,8 +13,9 @@ const handleSignIn = () => {
   fetch("http://localhost:3000/users/signIn", {
     method: "POST", 
     headers: {"Content-Type": "application/json"},
-    body : JSON.stringify(user)
-    .then(response => response.json({username : userName, firstname : firstName, password : password}))
+    body : JSON.stringify({username : userName, password : password})
+    .then(response => response.json())
+    .then(response => response.json())
     .then(data => {
       if (data.result){
         window.location.assign("/Home")
@@ -35,6 +36,7 @@ const handleSignIn = () => {
     <input placeholder="Password" onChange={(e) => setPassword(e.target.value)} className={styles.input} value={password}/>
     <button onClick={() => handleSignIn()} className={styles.SignIn}>Sign in</button>
     </div>
+    
   );
 }
 
