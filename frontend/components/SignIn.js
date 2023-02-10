@@ -33,7 +33,7 @@ const handleSignIn = () => {
     </div>
     <input placeholder="Username" onChange={(e) => setUserName(e.target.value)} className={styles.input} value={userName}/>
     <input placeholder="Password" onChange={(e) => setPassword(e.target.value)} className={styles.input} value={password}/>
-    <button onClick={() => setSignUp()} className={styles.SignIn}>Sign in</button>
+    <button onClick={() => handleSignIn()} className={styles.SignIn}>Sign in</button>
     </div>
   );
 }
