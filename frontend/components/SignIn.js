@@ -5,8 +5,23 @@ import { useEffect, useState } from 'react';
 function SignUp(props) {
 const [userName,setUserName] = useState("")
 const [password,setPassword] = useState("")
+const [firstName, setFirstName] = useState("")
 
 const { close } = props;
+
+const handleSignIn = () => {
+  fetch("http://localhost:3000/users/signIn", {
+    method: "POST", 
+    headers: {"Content-Type": "application/json"},
+    body : JSON.stringify(user)
+    .then(response => response.json({username : userName, firstname : firstName, password : password}))
+    .then(data => {
+      if (data.result){
+        window.location.assign("/Home")
+      }
+    })
+  })
+}
 
 
 
