@@ -1,22 +1,37 @@
+@font-face {
+  font-family: "tweet";
+  src: url(../font/mont-regular.ttf);
+}
 .main {
   display: flex;
   justify-content: space-between;  
   color: white;
   height: 100vh;
+  font-family: "tweet";
+  
 }
 .leftSide{
-  margin-left: 3%;
-  margin-top: 2%;
+  padding-left: 3%;
+  padding-top: 2%;
   display:flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 25vh;
+  width: 25%;
 
 }
 .centerSide {
+
+  padding-left: 1%;
+  padding-right: 1%;
+  padding-top: 2%;
   border-right :1px solid #2D353E;
   border-left : 1px solid #2D353E;
-  width: 136vh;
+  width: 45%;
+}
+.rightSide {
+  padding-left: 3%;
+  padding-top: 2%;
+  width: 30%;
 }
 .logo {
   background-image: url(../public/logoTw.png);
@@ -55,3 +70,56 @@
   background-color: black ;
 }
 
+.postTweet {
+  margin-top : 20px;
+  color: white;
+  padding-left: 10%;
+  padding-right: 10%;
+  
+}
+.whats {
+  background-color:#0C1315 ;
+  border: 1px solid black;
+  font-size: 16px;
+  border: none;
+  border-bottom: 1px solid white; 
+  width: 100%;
+ 
+}
+.whats::placeholder {
+  color:white;
+  opacity:0.7;
+  
+}
+.whats:focus {
+  color:white;
+  border: none;
+
+}
+.whats:focus-visible {
+  color:white;
+  border:none;
+}
+.count{
+  font-size: 12px;;
+  text-align: right;
+  margin-right : auto;
+
+}
+.tweetBtn {
+  margin-top: 8px;
+  width: 100px;
+  border-radius: 25px;
+  padding : 3px;
+  margin-left: 10px;
+  background-color: #2F87E8;
+  color: white;
+  font-size: 12px;
+  font-weight: 900;
+  transition: all 0.2s ease-in-out;
+
+}
+.tweetBtn:hover {
+  color: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+}
