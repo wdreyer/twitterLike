@@ -7,9 +7,7 @@ function Tweet() {
     <div className={styles.firstname}>John</div>
       <div className={styles.username}>@JohnCena</div>
       <div className={styles.time}>5 hours</div>
-      <div className={}
-
-
+      <div className={styles.time}></div>
     </div>
   );
 }
