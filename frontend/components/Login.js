@@ -2,7 +2,6 @@ import styles from "../styles/Login.module.css";
 import SignIn from "./SignIn";
 import SignUp from "./SignUp";
 import { useEffect, useState } from "react";
-import { response } from "../../Backend/app";
 
 function Login() {
   const [signup, setSignUp] = useState(false);
