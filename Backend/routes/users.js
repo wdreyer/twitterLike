@@ -6,6 +6,8 @@ const uid2 = require("uid2");
 const bcrypt = require("bcrypt");
 
 router.post("/signup", (req, res) => {
+  console.log(req.body);
+
   if (!checkBody(req.body, ["username", "password"])) {
     res.json({ result: false, error: "Missing or empty fields" });
     return;
@@ -13,16 +15,20 @@ router.post("/signup", (req, res) => {
 
   // Check if the user has not already been registered
   User.findOne({ username: req.body.username }).then((data) => {
+  
     if (data === null) {
+      console.log(req.body)
       const hash = bcrypt.hashSync(req.body.password, 10);
 
       const newUser = new User({
+        fistname : req.body.firstname,
         username: req.body.username,
         password: hash,
         token: uid2(32),
       });
-
+console.log(newUser)
       newUser.save().then((newDoc) => {
+        console.log(newUser);
         res.json({ result: true, token: newDoc.token });
       });
     } else {
